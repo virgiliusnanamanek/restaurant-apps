@@ -69,7 +69,7 @@ body {
 	display: flex;
 	font-weight: 600;
 	font-size: 1rem;
-	text-transform: uppercase
+	text-transform: uppercase;
 }
 .nav--mobile a {
 	display: inline-block;
@@ -178,7 +178,7 @@ body {
 }
 
 .content__section {
-    margin: 1.8rem 0 3rem 0;
+    padding: 1.8rem 0 3rem 0;
     width: 100%;
     text-align: center;
     font-size: 2rem;
