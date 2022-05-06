@@ -18,7 +18,7 @@ const LikeBtnPresenter = {
     if (await this._isRestoExist(id)) {
       this._renderLiked();
     } else {
-      return this._renderLike();
+      this._renderLike();
     }
   },
 
