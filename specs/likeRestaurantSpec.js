@@ -1,10 +1,10 @@
 import FavoriteRestoIdb from '../src/scripts/data/favorite-resto-idb';
 import * as TestFactories from './helpers/testFactories';
 
-const addLikeBtnContainer = () => {
-  document.body.innerHTML = '<div id="likeBtn"></div>';
-};
 describe('Like a restaurant', () => {
+  const addLikeBtnContainer = () => {
+    document.body.innerHTML = '<div id="likeBtn"></div>';
+  };
   beforeEach(() => {
     addLikeBtnContainer();
   });
