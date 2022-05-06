@@ -25,6 +25,8 @@
         "no-undef":"off",
         "no-prototype-builtins":"off",
         "consistent-return":"off",
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "object-curly-spacing": "off",
+        "require-jsdoc": "off"
     }
 }

@@ -4,7 +4,7 @@ import {
   createLikedButton,
 } from '../views/templates/template-creator';
 
-const LikeButtonInitiator = {
+const LikeBtnPresenter = {
   async init({ likeBtn, resto }) {
     this._likeBtn = likeBtn;
     this._resto = resto;
@@ -30,7 +30,7 @@ const LikeButtonInitiator = {
   _renderLike() {
     this._likeBtn.innerHTML = createLikeButton();
 
-    const likeButton = document.querySelector('#likeBtn');
+    const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
       await FavoriteRestoIdb.putResto(this._resto);
       this._renderButton();
@@ -40,7 +40,7 @@ const LikeButtonInitiator = {
   _renderLiked() {
     this._likeBtn.innerHTML = createLikedButton();
 
-    const likeButton = document.querySelector('#likeBtn');
+    const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
       await FavoriteRestoIdb.deleteResto(this._resto.id);
       this._renderButton();
@@ -48,4 +48,4 @@ const LikeButtonInitiator = {
   },
 };
 
-export default LikeButtonInitiator;
+export default LikeBtnPresenter;
