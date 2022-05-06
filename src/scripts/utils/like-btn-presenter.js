@@ -28,7 +28,7 @@ const LikeBtnPresenter = {
   },
 
   _renderLike() {
-    this._likeBtn.innerHTML = createLikeButton();
+    this._likeBtnContainer.innerHTML = createLikeButton();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
@@ -38,7 +38,7 @@ const LikeBtnPresenter = {
   },
 
   _renderLiked() {
-    this._likeBtn.innerHTML = createLikedButton();
+    this._likeBtnContainer.innerHTML = createLikedButton();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
