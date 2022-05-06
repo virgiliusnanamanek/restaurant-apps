@@ -3,7 +3,7 @@ import * as TestFactories from './helpers/testFactories';
 
 describe('Like a restaurant', () => {
   const addLikeBtnContainer = () => {
-    document.body.innerHTML = '<div id="likeBtn"></div>';
+    document.body.innerHTML = '<div id="likeBtnContainer"></div>';
   };
   beforeEach(() => {
     addLikeBtnContainer();
