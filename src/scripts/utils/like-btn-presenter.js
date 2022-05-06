@@ -5,8 +5,8 @@ import {
 } from '../views/templates/template-creator';
 
 const LikeBtnPresenter = {
-  async init({ likeBtn, resto }) {
-    this._likeBtn = likeBtn;
+  async init({ likeBtnContainer, resto }) {
+    this._likeBtnContainer = likeBtnContainer;
     this._resto = resto;
 
     await this._renderButton();
@@ -18,7 +18,7 @@ const LikeBtnPresenter = {
     if (await this._isRestoExist(id)) {
       this._renderLiked();
     } else {
-      return this._renderLike();
+      this._renderLike();
     }
   },
 
@@ -28,7 +28,7 @@ const LikeBtnPresenter = {
   },
 
   _renderLike() {
-    this._likeBtn.innerHTML = createLikeButton();
+    this._likeBtnContainer.innerHTML = createLikeButton();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
@@ -38,7 +38,7 @@ const LikeBtnPresenter = {
   },
 
   _renderLiked() {
-    this._likeBtn.innerHTML = createLikedButton();
+    this._likeBtnContainer.innerHTML = createLikedButton();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {

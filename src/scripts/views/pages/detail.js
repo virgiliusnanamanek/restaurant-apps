@@ -7,7 +7,7 @@ const Detail = {
   async render() {
     return `
     <div id="resto" class="resto"></div>
-    <div id="likeBtn"></div>
+    <div id="likeBtnContainer"></div>
       `;
   },
 
@@ -19,7 +19,7 @@ const Detail = {
       const resto = await RestaurantSource.detailRestaurantListById(url.id);
       restoContainer.innerHTML = createDetailResto(resto);
       LikeBtnPresenter.init({
-        likeBtn: document.querySelector('#likeBtn'),
+        likeBtnContainer: document.querySelector('#likeBtnContainer'),
         resto: {
           id: resto.id,
           address: resto.address,

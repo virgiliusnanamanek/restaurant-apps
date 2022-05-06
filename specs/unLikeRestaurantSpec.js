@@ -27,4 +27,10 @@ describe('unlike a restaurant', () => {
     document.querySelector('[aria-label="unlike this restaurant"]').dispatchEvent(new Event('click'));
     expect(await FavoriteRestoIdb.getAllResto()).toEqual([]);
   });
+  it('should not throw error if the unliked restaurant is not in the list', async () => {
+    await TestFactories.createLikeBtnPresenterWithResto({ id: 1 });
+    await FavoriteRestoIdb.deleteResto(1);
+    document.querySelector('[aria-label="unlike this restaurant"]').dispatchEvent(new Event('click'));
+    expect(await FavoriteRestoIdb.getAllResto()).toEqual([]);
+  });
 });
