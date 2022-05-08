@@ -4,12 +4,12 @@ import { createRestoList } from '../templates/template-creator';
 const Favorite = {
   async render() {
     return `
-    <div class="favotite">
-    <h2 class="favotite__heading">Your Favorite Restaurants</h2>
-    <div id="restoes" class="restoes">
+    <div class="favorite">
+      <h2 class="favorite__heading">Your Favorite Restaurants</h2>
+      <div id="restoes" class="restoes">
 
+      </div>
     </div>
-  </div>
         `;
   },
 
