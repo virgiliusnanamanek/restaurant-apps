@@ -77,9 +77,15 @@
 	.review_card {
 		grid-template-columns: repeat(3, 1fr);
 	}
+	.hero{
+		background-image: url('./images/heros/hero-image_4-large.jpg');
+	}
 }
 @media screen and (min-width: 1200px) {
 	.content {
 		max-width: 1200px
+	}
+	.hero{
+		background-image: url('./images/heros/hero-image_4-large.jpg');
 	}
 }

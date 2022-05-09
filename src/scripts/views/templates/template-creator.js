@@ -54,7 +54,7 @@ const createDetailResto = (resto) => `
 
 const createRestoList = (resto) => `
     <article class="card resto-item">
-    <img class="card__img lazyload" src="${CONFIG.SMALL_BASE_IMAGE_URL + resto.pictureId}" alt="gambar untuk kota ${resto.name}" title="${resto.name}">
+    <img class="card__img lazyload" data-src="${CONFIG.SMALL_BASE_IMAGE_URL + resto.pictureId}" alt="gambar untuk kota ${resto.name}" title="${resto.name}">
     <div class="card__city">${resto.city}</div>
     <div class="card__text">
         <p class="card__rating">

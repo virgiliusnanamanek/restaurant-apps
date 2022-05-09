@@ -140,7 +140,7 @@ body {
     min-height: 380px;
     width: 100%;
     text-align: center;
-    background-image: url('../public/images/heros/hero-image_4.jpg');
+    background-image: url('./images/heros/hero-image_4-small.jpg'); 
     background-position: center;
     position: relative;
 }

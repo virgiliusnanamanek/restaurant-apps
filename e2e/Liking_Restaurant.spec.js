@@ -19,6 +19,7 @@ Scenario('Like and dislike a restaurant', async ({ I }) => {
   const firstRestoTitle = await I.grabTextFrom(firstResto);
   I.wait(1);
   I.click(firstResto);
+  I.waitForElement('#likeButton');
   I.seeElement('#likeButton');
   I.wait(1);
   I.click('#likeButton');
