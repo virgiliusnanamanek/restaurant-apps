@@ -2,7 +2,7 @@ import FavoriteRestoIdb from '../src/scripts/data/favorite-resto-idb';
 import * as TestFactories from './helpers/testFactories';
 
 const addLikeBtnContainer = () => {
-  document.body.innerHTML = '<div id="likeBtn"></div>';
+  document.body.innerHTML = '<div id="likeBtnContainer"></div>';
 };
 describe('unlike a restaurant', () => {
   beforeEach(async () => {
@@ -14,7 +14,7 @@ describe('unlike a restaurant', () => {
   });
   it('should display unlike widget when the restaurant has been liked', async () => {
     await TestFactories.createLikeBtnPresenterWithResto({id: 1});
-    expect(document.querySelector('[aria-label="unlike this restaurant"]'))
+    expect(document.querySelector('#likeButton'))
       .toBeTruthy();
   });
   it('should not display like widget when the restaurant has been liked', async () => {
@@ -24,13 +24,13 @@ describe('unlike a restaurant', () => {
   });
   it('should be able to remove liked restaurant from the list', async () => {
     await TestFactories.createLikeBtnPresenterWithResto({ id: 1 });
-    document.querySelector('[aria-label="unlike this restaurant"]').dispatchEvent(new Event('click'));
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
     expect(await FavoriteRestoIdb.getAllResto()).toEqual([]);
   });
   it('should not throw error if the unliked restaurant is not in the list', async () => {
     await TestFactories.createLikeBtnPresenterWithResto({ id: 1 });
     await FavoriteRestoIdb.deleteResto(1);
-    document.querySelector('[aria-label="unlike this restaurant"]').dispatchEvent(new Event('click'));
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
     expect(await FavoriteRestoIdb.getAllResto()).toEqual([]);
   });
 });

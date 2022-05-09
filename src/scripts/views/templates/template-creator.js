@@ -53,18 +53,18 @@ const createDetailResto = (resto) => `
 `;
 
 const createRestoList = (resto) => `
-    <div class="card">
-        <img class="card__img" src="${CONFIG.SMALL_BASE_IMAGE_URL + resto.pictureId}" alt="gambar untuk kota ${resto.name}" title="${resto.name}">
-        <div class="card__city">${resto.city}</div>
-        <div class="card__text">
-            <p class="card__rating">
-                Rating : 
-                <small class="card__rating__value">${resto.rating}</small>
-            </p>
-            <h1 class="card__title"><a href="${`/#/detail/${resto.id}`}">${resto.name}</a></h1>
-            <slice class="card__desc">${resto.description.slice(0, 150)}...</div>
-        </div>
+    <article class="card resto-item">
+    <img class="card__img lazyload" data-src="${CONFIG.SMALL_BASE_IMAGE_URL + resto.pictureId}" alt="gambar untuk kota ${resto.name}" title="${resto.name}">
+    <div class="card__city">${resto.city}</div>
+    <div class="card__text">
+        <p class="card__rating">
+            Rating : 
+            <small class="card__rating__value">${resto.rating}</small>
+        </p>
+        <h1 class="card__title"><a href="${`/#/detail/${resto.id}`}" class="resto__name">${resto.name}</a></h1>
+        <slice class="card__desc">${resto.description.slice(0, 150)}...</div>
     </div>
+    </article>
 `;
 const createLikeButton = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
