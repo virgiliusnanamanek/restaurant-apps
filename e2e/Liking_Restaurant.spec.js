@@ -1,5 +1,4 @@
 const assert = require('assert');
-const { async } = require('regenerator-runtime');
 
 Feature('Liking Restaurant');
 
@@ -12,21 +11,27 @@ Scenario('show an empty restaurant', ({I}) => {
   I.see('You don\'t have any Favorite Restaurant', '.message_empty');
 });
 
-Scenario('Like a restaurant', async ({ I }) => {
-  I.see('You don\'t have any Favorite Restaurant', '.message_empty');
-
+Scenario('Like and dislike a restaurant', async ({ I }) => {
   I.amOnPage('/');
-  I.seeElement('.card__text .card__title a');
-  const firstResto = locate('card__text .card__title a').first();
+  I.wait(1);
+  I.seeElement('.content__list .resto-item');
+  const firstResto = locate('.card__title .resto__name').first();
   const firstRestoTitle = await I.grabTextFrom(firstResto);
+  I.wait(1);
   I.click(firstResto);
-
   I.seeElement('#likeButton');
+  I.wait(1);
   I.click('#likeButton');
-
   I.amOnPage('/#/favorite');
-  I.seeElement('.card');
-  const firstLikedResto = await I.grabTextFrom('.card__text .card__title');
-
-  assert.strictEqual(firstRestoTitle, firstLikedResto);
+  I.seeElement('.favorite .restoes .resto-item');
+  const likedRestoName = await I.grabTextFrom('.card__title');
+  assert.strictEqual(firstRestoTitle, likedRestoName);
+  I.wait(1);
+  I.click(firstResto);
+  I.seeElement('#likeButton');
+  I.wait(1);
+  I.click('#likeButton');
+  I.amOnPage('/#/favorite');
+  I.dontSeeElement(firstResto);
+  I.see('You don\'t have any Favorite Restaurant', '.message_empty');
 });
