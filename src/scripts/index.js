@@ -6,6 +6,8 @@ import './views/components/nav-bar';
 import './views/components/hero-part';
 import './views/components/footer-part';
 import swRegister from './utils/sw-register';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const app = new App({
   button: document.querySelector('.menu__link'),
